@@ -99,9 +99,50 @@ func switchConst(){
 	}
 }
 
+// arrays
+func arrays(){
+	// var arr [4]int
+
+	// arr[0] = 1
+
+	// val := [3]int{1, 2, 3}
+
+	// fmt.Println(len(arr));
+	// fmt.Println((arr[0]));
+	// fmt.Println((val));
+	
+	
+	// // 2d- array
+	// num := [2][2]int{{3, 4}, {5,6}}
+	// fmt.Println((num));
+
+	// fixed size, that is predictable
+	// memory optimazation
+	// contant time access
 
 
 
+	// SLICES
+	// --> dynamic
+	// --> most used construct in go
+	// --> useful method
+
+	// var slc []int // uninitialized slice in nil
+	// fmt.Println(slc == nil)
+	// fmt.Println(len(slc))
+
+	var nums1 = make([]int, 2, 5) // 5 = initial capacity , 2 = starting two element will be zero, so put 0 instead of 2
+	fmt.Println(nums1 == nil)
+	fmt.Println(cap(nums1)) // maximum numbers of elements can fit
+	
+	nums1 = append(nums1, 1)
+	nums1 = append(nums1, 2)
+	nums1 = append(nums1, 3)
+	nums1 = append(nums1, 4)
+	fmt.Println(nums1) // 
+	fmt.Println(cap(nums1)) // 
+
+}
 
 func main() {
 	fmt.Println("Hello world")
@@ -109,5 +150,6 @@ func main() {
 	// constants()
 	// loop()
 	// condition()
-	switchConst()
+	// switchConst()
+	arrays()
 }
