@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 // variables
 
@@ -135,13 +138,26 @@ func arrays(){
 	fmt.Println(nums1 == nil)
 	fmt.Println(cap(nums1)) // maximum numbers of elements can fit
 	
-	nums1 = append(nums1, 1)
-	nums1 = append(nums1, 2)
-	nums1 = append(nums1, 3)
-	nums1 = append(nums1, 4)
-	fmt.Println(nums1) // 
-	fmt.Println(cap(nums1)) // 
+	// nums1 = append(nums1, 1)
+	// nums1 = append(nums1, 2)
+	// nums1 = append(nums1, 3)
+	// nums1 = append(nums1, 4)
+	// fmt.Println(nums1) // 
+	// fmt.Println(cap(nums1)) // 
 
+	var num3 = []int{1, 2, 3, 4, 5, 6}
+	fmt.Println(num3[:2]) // start:ending(excluded)
+	fmt.Println(num3[1:]) // start:ending(excluded)
+
+	var num4 = []int{1, 2, 3}
+	var num5 = []int{1, 2, 3, 4}
+
+	fmt.Println(slices.Equal(num4, num5))
+
+
+	// 2d slices
+	var arr2d = [][]int{{1, 2, 3}, {4, 5, 6}}
+	fmt.Println(arr2d)
 }
 
 func main() {
