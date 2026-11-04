@@ -58,14 +58,6 @@ type payment struct {
 	gatway paymenter
 }
 
-func (p payment) makePayment(amount float32) {
-	// razorpayPaymentGw := razorpay{}
-
-	// razorpayPaymentGw.pay(amount)
-	p.gatway.pay(amount)
-}
-
-
 type razorpay struct {
 
 }
@@ -75,11 +67,30 @@ func (r razorpay) pay(amount float32){
 	fmt.Println("Making payment using razorpay", amount)
 }
 
+func (p payment) makePayment(amount float32) {
+	// razorpayPaymentGw := razorpay{}
+
+	// razorpayPaymentGw.pay(amount)
+	p.gatway.pay(amount)
+}
+
+
+type paypal struct {}
+
+func (p paypal) pay(amount float32){
+	fmt.Println("Making payment using paypal", amount)
+}
+
+
+
 
 func main(){
-	razorpayPaymentGw := razorpay{}
+	// razorpayPaymentGw := razorpay{}
+
+	paypalGw := paypal{}
+
 	newPayment := payment {
-		gatway: razorpayPaymentGw,
+		gatway: paypalGw,
 	}
 
 	newPayment.makePayment(100)
